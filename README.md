@@ -1,7 +1,5 @@
 # pvoc
 
-A modular web application combining AI image processing, vocabulary learning, web scraping and geo-based user management — built with Symfony, Python and Node.js inside a Docker environment.
-
 Eine modulare Webanwendung die KI-Bildverarbeitung, Vokabellernen, Web-Scraping und geobasierte Benutzerverwaltung kombiniert — entwickelt mit Symfony, Python und Node.js in einer Docker-Umgebung.
 
 ---
@@ -9,7 +7,6 @@ Eine modulare Webanwendung die KI-Bildverarbeitung, Vokabellernen, Web-Scraping 
 ## Modules
 
 ### 🖼️ NSFW Gallery
-AI-powered image gallery with analysis pipeline, face enhancement and slideshow.
 KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slideshow.
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-blue?style=flat-square)
 ![YOLO](https://img.shields.io/badge/YOLO-darkblue?style=flat-square)
@@ -20,7 +17,6 @@ KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slide
 ---
 
 ### 📈 GuteFrage Scraping
-Automated scraping and ranking analysis with time-series visualization.
 Automatisiertes Scraping und Ranking-Analyse mit Zeitreihen-Visualisierung.
 ![Selenium](https://img.shields.io/badge/Selenium-green?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
@@ -31,7 +27,6 @@ Automatisiertes Scraping und Ranking-Analyse mit Zeitreihen-Visualisierung.
 ---
 
 ### 🎓 PVOC – Vocabulary Trainer
-AI-assisted vocabulary learning with image generation and multilingual support.
 KI-gestütztes Vokabellernen mit Bildgenerierung und Mehrsprachigkeit.
 ![Symfony](https://img.shields.io/badge/Symfony-goldenrod?style=flat-square)
 ![MySQL](https://img.shields.io/badge/MySQL-goldenrod?style=flat-square)
@@ -42,8 +37,57 @@ KI-gestütztes Vokabellernen mit Bildgenerierung und Mehrsprachigkeit.
 ---
 
 ### 👥 Geo-based User Management
-User profiles with face detection, portrait slider and interactive location maps.
 Benutzerprofile mit Gesichtserkennung, Portrait-Slider und interaktiven Standortkarten.
+
+![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
+![Leaflet](https://img.shields.io/badge/Leaflet-green?style=flat-square)
+![Stimulus](https://img.shields.io/badge/Stimulus-green?style=flat-square)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-green?style=flat-square)
+
+---
+
+# pvoc
+
+A modular web application combining AI image processing, vocabulary learning, web scraping and geo-based user management — built with Symfony, Python and Node.js inside a Docker environment.
+
+
+## Modules
+
+### 🖼️ NSFW Gallery
+AI-powered image gallery with analysis pipeline, face enhancement and slideshow.
+
+![MediaPipe](https://img.shields.io/badge/MediaPipe-blue?style=flat-square)
+![YOLO](https://img.shields.io/badge/YOLO-darkblue?style=flat-square)
+![Real-ESRGAN](https://img.shields.io/badge/Real--ESRGAN-blue?style=flat-square)
+![OpenAI](https://img.shields.io/badge/OpenAI-blue?style=flat-square)
+![Stimulus](https://img.shields.io/badge/Stimulus-blue?style=flat-square)
+
+---
+
+### 📈 GuteFrage Scraping
+Automated scraping and ranking analysis with time-series visualization.
+
+![Selenium](https://img.shields.io/badge/Selenium-green?style=flat-square)
+![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
+![Chart.js](https://img.shields.io/badge/Chart.js-green?style=flat-square)
+![Node.js](https://img.shields.io/badge/Node.js-green?style=flat-square)
+![Stimulus](https://img.shields.io/badge/Stimulus-green?style=flat-square)
+
+---
+
+### 🎓 PVOC – Vocabulary Trainer
+AI-assisted vocabulary learning with image generation and multilingual support.
+
+![Symfony](https://img.shields.io/badge/Symfony-goldenrod?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-goldenrod?style=flat-square)
+![OpenAI](https://img.shields.io/badge/OpenAI-goldenrod?style=flat-square)
+![Stimulus](https://img.shields.io/badge/Stimulus-goldenrod?style=flat-square)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-goldenrod?style=flat-square)
+
+---
+
+### 👥 Geo-based User Management
+User profiles with face detection, portrait slider and interactive location maps.
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
 ![Leaflet](https://img.shields.io/badge/Leaflet-green?style=flat-square)
