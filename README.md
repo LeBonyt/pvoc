@@ -1,13 +1,13 @@
-# pvoc – Projektübersicht
+# pvoc
 
-Alle Module auf einen Blick
+A modular web application combining AI image processing, vocabulary learning, web scraping and geo-based user management — built with Symfony, Python and Node.js inside a Docker environment.
 
 ---
 
-## Module
+## Modules
 
 ### 🖼️ NSFW Gallery
-KI-generierte Bildergalerie mit Vollbild-Slideshow und Ken-Burns-Effekt. Analyse-Pipeline mit MediaPipe (Gesichtserkennung), YOLO (Personen), MediaPipe Hands sowie Real-ESRGAN Upscaling. Bilder können verschoben, kopiert, umbenannt und per OpenAI Face Enhancement verbessert werden. Musikuntermalung per MP3-Dropdown.
+AI-powered image gallery with analysis pipeline, face enhancement and slideshow.
 
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-blue?style=flat-square)
 ![YOLO](https://img.shields.io/badge/YOLO-darkblue?style=flat-square)
@@ -18,7 +18,7 @@ KI-generierte Bildergalerie mit Vollbild-Slideshow und Ken-Burns-Effekt. Analyse
 ---
 
 ### 📈 GuteFrage Scraping
-Selenium-basiertes Scraping der gutefrage.net Gruppenrankings. Automatischer Login, Extraktion von Rang, Mitgliedern und Beiträgen für bis zu 100 Gruppen. Zeitreihen werden in MongoDB gespeichert und als interaktiver Linien-Chart mit Delta-Anzeige visualisiert. Snapshot-Navigation und sortierbare Ranglisten-Tabelle.
+Automated scraping and ranking analysis with time-series visualization.
 
 ![Selenium](https://img.shields.io/badge/Selenium-green?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
@@ -28,8 +28,8 @@ Selenium-basiertes Scraping der gutefrage.net Gruppenrankings. Automatischer Log
 
 ---
 
-### 🎓 PVOC – Vokabeltrainer
-Interaktives Vokabellernprogramm mit KI-Unterstützung. Vokabeln werden mit Bildern, Beschreibungen und Beispielsätzen angereichert. KI-generierte Bilder per OpenAI-Integration, Autocomplete, Mehrsprachigkeit und strukturierte Lernhefte. MySQL-Backend mit Symfony und Stimulus-Frontend.
+### 🎓 PVOC – Vocabulary Trainer
+AI-assisted vocabulary learning with image generation and multilingual support.
 
 ![Symfony](https://img.shields.io/badge/Symfony-goldenrod?style=flat-square)
 ![MySQL](https://img.shields.io/badge/MySQL-goldenrod?style=flat-square)
@@ -39,8 +39,8 @@ Interaktives Vokabellernprogramm mit KI-Unterstützung. Vokabeln werden mit Bild
 
 ---
 
-### 👥 Geobasierte Benutzerverwaltung
-Geobasierte Benutzerverwaltung mit MongoDB und Live-Ortsuche. Gesichtsbilder werden als scrollbarer Thumbnail-Slider dargestellt. Ein Klick auf ein Portrait zeigt das Bild und eine interaktive Leaflet-Karte mit dem Wohnort des Benutzers.
+### 👥 Geo-based User Management
+User profiles with face detection, portrait slider and interactive location maps.
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
 ![Leaflet](https://img.shields.io/badge/Leaflet-green?style=flat-square)
@@ -49,7 +49,7 @@ Geobasierte Benutzerverwaltung mit MongoDB und Live-Ortsuche. Gesichtsbilder wer
 
 ---
 
-## Tech-Stack
+## Tech Stack
 
 ![Symfony](https://img.shields.io/badge/Symfony%207%20%2F%20PHP-informational?style=flat-square&color=darkblue)
 ![Stimulus](https://img.shields.io/badge/Stimulus%20%2F%20AssetMapper-informational?style=flat-square&color=darkblue)
