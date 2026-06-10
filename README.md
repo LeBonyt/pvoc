@@ -11,7 +11,7 @@ KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slide
 
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-blue?style=flat-square)
 ![YOLO](https://img.shields.io/badge/YOLO-darkblue?style=flat-square)
-[Real-ESRGAN](https://img.shields.io/badge/Real--ESRGAN-blue?style=flat-square)
+![Real-ESRGAN](https://img.shields.io/badge/Real--ESRGAN-blue?style=flat-square)
 ![OpenAI](https://img.shields.io/badge/OpenAI-blue?style=flat-square)
 ![Stimulus](https://img.shields.io/badge/Stimulus-blue?style=flat-square)
 
