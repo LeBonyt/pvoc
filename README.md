@@ -11,7 +11,6 @@ Eine modulare Webanwendung die KI-Bildverarbeitung, Vokabellernen, Web-Scraping 
 ### 🖼️ NSFW Gallery
 AI-powered image gallery with analysis pipeline, face enhancement and slideshow.
 KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slideshow.
-
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-blue?style=flat-square)
 ![YOLO](https://img.shields.io/badge/YOLO-darkblue?style=flat-square)
 ![Real-ESRGAN](https://img.shields.io/badge/Real--ESRGAN-blue?style=flat-square)
@@ -23,7 +22,6 @@ KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slide
 ### 📈 GuteFrage Scraping
 Automated scraping and ranking analysis with time-series visualization.
 Automatisiertes Scraping und Ranking-Analyse mit Zeitreihen-Visualisierung.
-
 ![Selenium](https://img.shields.io/badge/Selenium-green?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
 ![Chart.js](https://img.shields.io/badge/Chart.js-green?style=flat-square)
@@ -35,7 +33,6 @@ Automatisiertes Scraping und Ranking-Analyse mit Zeitreihen-Visualisierung.
 ### 🎓 PVOC – Vocabulary Trainer
 AI-assisted vocabulary learning with image generation and multilingual support.
 KI-gestütztes Vokabellernen mit Bildgenerierung und Mehrsprachigkeit.
-
 ![Symfony](https://img.shields.io/badge/Symfony-goldenrod?style=flat-square)
 ![MySQL](https://img.shields.io/badge/MySQL-goldenrod?style=flat-square)
 ![OpenAI](https://img.shields.io/badge/OpenAI-goldenrod?style=flat-square)
