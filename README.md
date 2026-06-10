@@ -4,7 +4,7 @@ Eine modulare Webanwendung die KI-Bildverarbeitung, Vokabellernen, Web-Scraping 
 
 ---
 
-## Modules
+## Module
 
 ### 🖼️ NSFW Gallery
 KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slideshow.
