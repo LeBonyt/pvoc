@@ -2,12 +2,15 @@
 
 A modular web application combining AI image processing, vocabulary learning, web scraping and geo-based user management — built with Symfony, Python and Node.js inside a Docker environment.
 
+Eine modulare Webanwendung die KI-Bildverarbeitung, Vokabellernen, Web-Scraping und geobasierte Benutzerverwaltung kombiniert — entwickelt mit Symfony, Python und Node.js in einer Docker-Umgebung.
+
 ---
 
 ## Modules
 
 ### 🖼️ NSFW Gallery
 AI-powered image gallery with analysis pipeline, face enhancement and slideshow.
+KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slideshow.
 
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-blue?style=flat-square)
 ![YOLO](https://img.shields.io/badge/YOLO-darkblue?style=flat-square)
@@ -19,6 +22,7 @@ AI-powered image gallery with analysis pipeline, face enhancement and slideshow.
 
 ### 📈 GuteFrage Scraping
 Automated scraping and ranking analysis with time-series visualization.
+Automatisiertes Scraping und Ranking-Analyse mit Zeitreihen-Visualisierung.
 
 ![Selenium](https://img.shields.io/badge/Selenium-green?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
@@ -30,6 +34,7 @@ Automated scraping and ranking analysis with time-series visualization.
 
 ### 🎓 PVOC – Vocabulary Trainer
 AI-assisted vocabulary learning with image generation and multilingual support.
+KI-gestütztes Vokabellernen mit Bildgenerierung und Mehrsprachigkeit.
 
 ![Symfony](https://img.shields.io/badge/Symfony-goldenrod?style=flat-square)
 ![MySQL](https://img.shields.io/badge/MySQL-goldenrod?style=flat-square)
@@ -41,6 +46,7 @@ AI-assisted vocabulary learning with image generation and multilingual support.
 
 ### 👥 Geo-based User Management
 User profiles with face detection, portrait slider and interactive location maps.
+Benutzerprofile mit Gesichtserkennung, Portrait-Slider und interaktiven Standortkarten.
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
 ![Leaflet](https://img.shields.io/badge/Leaflet-green?style=flat-square)
