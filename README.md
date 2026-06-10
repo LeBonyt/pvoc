@@ -45,7 +45,6 @@ Benutzerprofile mit Gesichtserkennung, Portrait-Slider und interaktiven Standort
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-green?style=flat-square)
 
 ---
-
 # pvoc
 
 A modular web application combining AI image processing, vocabulary learning, web scraping and geo-based user management — built with Symfony, Python and Node.js inside a Docker environment.
