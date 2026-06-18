@@ -14,6 +14,7 @@ KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slide
 ![Real-ESRGAN](https://img.shields.io/badge/Real--ESRGAN-blue?style=flat-square)
 ![OpenAI](https://img.shields.io/badge/OpenAI-blue?style=flat-square)
 ![Stimulus](https://img.shields.io/badge/Stimulus-blue?style=flat-square)
+![Mercure](https://img.shields.io/badge/Mercure-blue?style=flat-square)
 
 ---
 
@@ -63,6 +64,7 @@ AI-powered image gallery with analysis pipeline, face enhancement and slideshow.
 ![Real-ESRGAN](https://img.shields.io/badge/Real--ESRGAN-blue?style=flat-square)
 ![OpenAI](https://img.shields.io/badge/OpenAI-blue?style=flat-square)
 ![Stimulus](https://img.shields.io/badge/Stimulus-blue?style=flat-square)
+![Mercure](https://img.shields.io/badge/Mercure-blue?style=flat-square)
 
 ---
 
