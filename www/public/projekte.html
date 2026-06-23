@@ -37,7 +37,11 @@
                                 <i class="fa-solid fa-images me-2 text-primary"></i>NSFW Gallery
                             </h5>
                             <p class="card-text text-muted small">
-                                KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slideshow.
+                                KI-generierte Bildergalerie mit Vollbild-Slideshow und Ken-Burns-Effekt.
+                                Analyse-Pipeline mit MediaPipe (Gesichtserkennung), YOLO (Personen),
+                                MediaPipe Hands sowie Real-ESRGAN Upscaling. Bilder können verschoben,
+                                kopiert, umbenannt und per OpenAI Face Enhancement verbessert werden.
+                                Musikuntermalung per MP3-Dropdown.
                             </p>
                             <div class="d-flex flex-wrap gap-1 mb-3">
                                 <span class="badge bg-secondary">MediaPipe</span>
@@ -48,8 +52,8 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="/testbed/nsfw" class="btn btn-primary btn-sm w-100">
-                                <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
+                            <a href="http://127.0.0.1:18432/html/nsfw.html" class="btn btn-primary btn-sm w-100">
+                                <i class="fa-solid fa-arrow-right me-1"></i>Öffnen
                             </a>
                         </div>
                     </div>
@@ -62,7 +66,11 @@
                                 <i class="fa-solid fa-chart-line me-2 text-success"></i>GuteFrage Scraping
                             </h5>
                             <p class="card-text text-muted small">
-                                Automatisiertes Scraping und Ranking-Analyse mit Zeitreihen-Visualisierung.
+                                Selenium-basiertes Scraping der gutefrage.net Gruppenrankings.
+                                Automatischer Login, Extraktion von Rang, Mitgliedern und Beiträgen
+                                für bis zu 100 Gruppen. Zeitreihen werden in MongoDB gespeichert
+                                und als interaktiver Linien-Chart mit Delta-Anzeige visualisiert.
+                                Snapshot-Navigation und sortierbare Ranglisten-Tabelle.
                             </p>
                             <div class="d-flex flex-wrap gap-1 mb-3">
                                 <span class="badge bg-secondary">Selenium</span>
@@ -73,7 +81,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="/selenium/gfscraping" class="btn btn-success btn-sm w-100">
+                            <a href="http://127.0.0.1:18432/html/gfscraping.html" class="btn btn-success btn-sm w-100">
                                 <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
                             </a>
                         </div>
@@ -87,7 +95,11 @@
                                 <i class="fa-solid fa-graduation-cap me-2 text-warning"></i>PVOC – Vokabeltrainer
                             </h5>
                             <p class="card-text text-muted small">
-                                KI-gestütztes Vokabellernen mit Bildgenerierung und Mehrsprachigkeit.
+                                Interaktives Vokabellernprogramm mit KI-Unterstützung.
+                                Vokabeln werden mit Bildern, Beschreibungen und Beispielsätzen
+                                angereichert. KI-generierte Bilder per OpenAI-Integration,
+                                Autocomplete, Mehrsprachigkeit und strukturierte Lernhefte.
+                                MySQL-Backend mit Symfony und Stimulus-Frontend.
                             </p>
                             <div class="d-flex flex-wrap gap-1 mb-3">
                                 <span class="badge bg-secondary">Symfony</span>
@@ -98,7 +110,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="/" class="btn btn-warning btn-sm w-100">
+                            <a href="http://127.0.0.1:18432/html/pvoc.html" class="btn btn-warning btn-sm w-100">
                                 <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
                             </a>
                         </div>
@@ -112,7 +124,10 @@
                                 <i class="fa-solid fa-users me-2 text-warning"></i>Geobasierte Benutzerverwaltung
                             </h5>
                             <p class="card-text text-muted small">
-                                Benutzerprofile mit Gesichtserkennung, Portrait-Slider und interaktiven Standortkarten.
+                                Geobasierte Benutzerverwaltung mit MongoDB und Live-Ortsuche.
+                                Gesichtsbilder werden als scrollbarer Thumbnail-Slider dargestellt.
+                                Ein Klick auf ein Portrait zeigt das Bild und eine interaktive
+                                Leaflet-Karte mit dem Wohnort des Benutzers.
                             </p>
                             <div class="d-flex flex-wrap gap-1 mb-3">
                                 <span class="badge bg-secondary">MongoDB</span>
@@ -122,7 +137,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="/admin/user" class="btn btn-success btn-sm w-100">
+                            <a href="http://127.0.0.1:18432/html/usermgmt.html" class="btn btn-success btn-sm w-100">
                                 <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
                             </a>
                         </div>
