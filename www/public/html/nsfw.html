@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NSFW Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="http://127.0.0.1:18432/projekte.html">
+                <i class="fa-solid fa-arrow-left me-2"></i>Projekte
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div style="background-color:ghostwhite; padding: 1.5rem;">
+
+            <div class="d-flex align-items-center mb-2">
+                <i class="fa-solid fa-images fa-2x text-primary me-3"></i>
+                <h2 class="mb-0">NSFW Gallery</h2>
+            </div>
+            <p class="text-muted mb-4">KI-gestützte Bildergalerie mit Analyse-Pipeline, Gesichtsverbesserung und Slideshow.</p>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="badge bg-secondary">MediaPipe</span>
+                <span class="badge bg-secondary">YOLO</span>
+                <span class="badge bg-secondary">Real-ESRGAN</span>
+                <span class="badge bg-secondary">OpenAI</span>
+                <span class="badge bg-secondary">Stimulus</span>
+                <span class="badge bg-secondary">Mercure</span>
+            </div>
+
+            <hr class="mb-4">
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="../img/nsfw_1.png" class="card-img-top"
+                             alt="Screenshot 1"
+                             onerror="this.style.height='200px';this.style.objectFit='none';this.src='';this.alt='Screenshot folgt';this.classList.add('bg-secondary');">
+                        <div class="card-footer bg-transparent text-muted small text-center">Galerie-Ansicht</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="../img/nsfw_2.png" class="card-img-top"
+                             alt="Screenshot 2"
+                             onerror="this.style.height='200px';this.style.objectFit='none';this.src='';this.alt='Screenshot folgt';this.classList.add('bg-secondary');">
+                        <div class="card-footer bg-transparent text-muted small text-center">Analyse-Pipeline</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="../img/nsfw_3.png" class="card-img-top"
+                             alt="Screenshot 3"
+                             onerror="this.style.height='200px';this.style.objectFit='none';this.src='';this.alt='Screenshot folgt';this.classList.add('bg-secondary');">
+                        <div class="card-footer bg-transparent text-muted small text-center">Face Enhancement</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Funktionsumfang</h5>
+                    <ul class="mb-0">
+                        <li>Vollbild-Slideshow mit Ken-Burns-Effekt</li>
+                        <li>Gesichtserkennung via MediaPipe und Personenerkennung via YOLO</li>
+                        <li>Upscaling mit Real-ESRGAN</li>
+                        <li>Face Enhancement per OpenAI-Integration</li>
+                        <li>Bilder verschieben, kopieren und umbenennen</li>
+                        <li>Musikuntermalung per MP3-Dropdown</li>
+                        <li>Job-Queue mit Mercure für asynchrone Verarbeitung</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
