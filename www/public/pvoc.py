@@ -1,3 +1,22 @@
+import importlib.util
+import sys
+
+# --- Dependency-Check ---
+# Nur Third-Party-Packages hier eintragen (import-Name: pip-Paketname)
+REQUIRED = {
+    "webview": "pywebview",
+}
+
+missing = {imp: pkg for imp, pkg in REQUIRED.items()
+           if importlib.util.find_spec(imp) is None}
+
+if missing:
+    print("Fehlende Module:", ", ".join(missing.keys()))
+    print("Installation mit:")
+    print(f"    pip install {' '.join(missing.values())}")
+    sys.exit(1)
+
+# --- Imports ---
 import webview
 import os
 import threading
