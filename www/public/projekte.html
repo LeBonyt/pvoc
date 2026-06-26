@@ -6,6 +6,41 @@
     <title>Projektübersicht</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        #module-row {
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            max-height: 800px;
+            opacity: 1;
+        }
+        #module-row.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        #tech-info {
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            max-height: 0;
+            opacity: 0;
+        }
+        #tech-info.visible {
+            max-height: 400px;
+            opacity: 1;
+        }
+        .badge-clickable {
+            cursor: pointer;
+            transition: transform 0.15s ease, filter 0.15s ease;
+        }
+        .badge-clickable:hover {
+            transform: scale(1.08);
+            filter: brightness(1.15);
+        }
+        .badge-clickable.active {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+        #toggle-btn { cursor: pointer; user-select: none; }
+    </style>
 </head>
 <body class="bg-light">
 
@@ -28,132 +63,150 @@
             <h2>Projektübersicht</h2>
             <p class="text-muted">Alle Module auf einen Blick</p>
 
-            <div class="row g-4 mt-1">
+            <div id="module-row">
+                <div class="row g-4 mt-1">
 
-                <div class="col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fa-solid fa-images me-2 text-primary"></i>NSFW Gallery
-                            </h5>
-                            <p class="card-text text-muted small">
-                                KI-generierte Bildergalerie mit Vollbild-Slideshow und Ken-Burns-Effekt.
-                                Analyse-Pipeline mit MediaPipe (Gesichtserkennung), YOLO (Personen),
-                                MediaPipe Hands sowie Real-ESRGAN Upscaling. Bilder können verschoben,
-                                kopiert, umbenannt und per OpenAI Face Enhancement verbessert werden.
-                                MP3 Dukebox.
-                            </p>
-                            <div class="d-flex flex-wrap gap-1 mb-3">
-                                <span class="badge bg-secondary">Mercure</span>
-                                <span class="badge bg-secondary">MediaPipe</span>
-                                <span class="badge bg-secondary">YOLO</span>
-                                <span class="badge bg-secondary">Real-ESRGAN</span>
-                                <span class="badge bg-secondary">OpenAI</span>
-                                <span class="badge bg-secondary">Stimulus</span>
+                    <div class="col-lg-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fa-solid fa-images me-2 text-primary"></i>NSFW Gallery
+                                </h5>
+                                <p class="card-text text-muted small">
+                                    KI-generierte Bildergalerie mit Vollbild-Slideshow und Ken-Burns-Effekt.
+                                    Analyse-Pipeline mit MediaPipe (Gesichtserkennung), YOLO (Personen),
+                                    MediaPipe Hands sowie Real-ESRGAN Upscaling. Bilder können verschoben,
+                                    kopiert, umbenannt und per OpenAI Face Enhancement verbessert werden.
+                                    MP3 Dukebox.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge bg-secondary">Mercure</span>
+                                    <span class="badge bg-secondary">MediaPipe</span>
+                                    <span class="badge bg-secondary">YOLO</span>
+                                    <span class="badge bg-secondary">Real-ESRGAN</span>
+                                    <span class="badge bg-secondary">OpenAI</span>
+                                    <span class="badge bg-secondary">Stimulus</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="http://127.0.0.1:18432/html/nsfw.html" class="btn btn-primary btn-sm w-100">
+                                    <i class="fa-solid fa-arrow-right me-1"></i>Öffnen
+                                </a>
                             </div>
                         </div>
-                        <div class="card-footer bg-transparent">
-                            <a href="http://127.0.0.1:18432/html/nsfw.html" class="btn btn-primary btn-sm w-100">
-                                <i class="fa-solid fa-arrow-right me-1"></i>Öffnen
-                            </a>
-                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fa-solid fa-chart-line me-2 text-success"></i>GuteFrage Scraping
-                            </h5>
-                            <p class="card-text text-muted small">
-                                Selenium-basiertes Scraping der gutefrage.net Gruppenrankings.
-                                Automatischer Login, Extraktion von Rang, Mitgliedern und Beiträgen
-                                für bis zu 100 Gruppen. Zeitreihen werden in MongoDB gespeichert
-                                und als interaktiver Linien-Chart mit Delta-Anzeige visualisiert.
-                                Snapshot-Navigation und sortierbare Ranglisten-Tabelle.
-                            </p>
-                            <div class="d-flex flex-wrap gap-1 mb-3">
-                                <span class="badge bg-secondary">Selenium</span>
-                                <span class="badge bg-secondary">MongoDB</span>
-                                <span class="badge bg-secondary">Chart.js</span>
-                                <span class="badge bg-secondary">Node.js</span>
-                                <span class="badge bg-secondary">Stimulus</span>
+                    <div class="col-lg-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fa-solid fa-chart-line me-2 text-success"></i>GuteFrage Scraping
+                                </h5>
+                                <p class="card-text text-muted small">
+                                    Selenium-basiertes Scraping der gutefrage.net Gruppenrankings.
+                                    Automatischer Login, Extraktion von Rang, Mitgliedern und Beiträgen
+                                    für bis zu 100 Gruppen. Zeitreihen werden in MongoDB gespeichert
+                                    und als interaktiver Linien-Chart mit Delta-Anzeige visualisiert.
+                                    Snapshot-Navigation und sortierbare Ranglisten-Tabelle.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge bg-secondary">Selenium</span>
+                                    <span class="badge bg-secondary">MongoDB</span>
+                                    <span class="badge bg-secondary">Chart.js</span>
+                                    <span class="badge bg-secondary">Node.js</span>
+                                    <span class="badge bg-secondary">Stimulus</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="http://127.0.0.1:18432/html/gfscraping.html" class="btn btn-success btn-sm w-100">
+                                    <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
+                                </a>
                             </div>
                         </div>
-                        <div class="card-footer bg-transparent">
-                            <a href="http://127.0.0.1:18432/html/gfscraping.html" class="btn btn-success btn-sm w-100">
-                                <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
-                            </a>
-                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fa-solid fa-graduation-cap me-2 text-warning"></i>PVOC – Vokabeltrainer
-                            </h5>
-                            <p class="card-text text-muted small">
-                                Interaktives Vokabellernprogramm mit KI-Unterstützung.
-                                Vokabeln werden mit Bildern, Beschreibungen und Beispielsätzen
-                                angereichert. KI-generierte Bilder per OpenAI-Integration,
-                                Autocomplete, Mehrsprachigkeit und strukturierte Lernhefte.
-                                MySQL-Backend mit Symfony und Stimulus-Frontend.
-                            </p>
-                            <div class="d-flex flex-wrap gap-1 mb-3">
-                                <span class="badge bg-secondary">Symfony</span>
-                                <span class="badge bg-secondary">MySQL</span>
-                                <span class="badge bg-secondary">OpenAI</span>
-                                <span class="badge bg-secondary">Stimulus</span>
-                                <span class="badge bg-secondary">Bootstrap</span>
+                    <div class="col-lg-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fa-solid fa-graduation-cap me-2 text-warning"></i>PVOC – Vokabeltrainer
+                                </h5>
+                                <p class="card-text text-muted small">
+                                    Interaktives Vokabellernprogramm mit KI-Unterstützung.
+                                    Vokabeln werden mit Bildern, Beschreibungen und Beispielsätzen
+                                    angereichert. KI-generierte Bilder per OpenAI-Integration,
+                                    Autocomplete, Mehrsprachigkeit und strukturierte Lernhefte.
+                                    MySQL-Backend mit Symfony und Stimulus-Frontend.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge bg-secondary">Symfony</span>
+                                    <span class="badge bg-secondary">MySQL</span>
+                                    <span class="badge bg-secondary">OpenAI</span>
+                                    <span class="badge bg-secondary">Stimulus</span>
+                                    <span class="badge bg-secondary">Bootstrap</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="http://127.0.0.1:18432/html/pvoc.html" class="btn btn-warning btn-sm w-100">
+                                    <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
+                                </a>
                             </div>
                         </div>
-                        <div class="card-footer bg-transparent">
-                            <a href="http://127.0.0.1:18432/html/pvoc.html" class="btn btn-warning btn-sm w-100">
-                                <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
-                            </a>
-                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fa-solid fa-users me-2 text-warning"></i>Geobasierte Benutzerverwaltung
-                            </h5>
-                            <p class="card-text text-muted small">
-                                Geobasierte Benutzerverwaltung mit MongoDB und Live-Ortsuche.
-                                Gesichtsbilder werden als scrollbarer Thumbnail-Slider dargestellt.
-                                Ein Klick auf ein Portrait zeigt das Bild und eine interaktive
-                                Leaflet-Karte mit dem Wohnort des Benutzers.
-                            </p>
-                            <div class="d-flex flex-wrap gap-1 mb-3">
-                                <span class="badge bg-secondary">MongoDB</span>
-                                <span class="badge bg-secondary">Leaflet</span>
-                                <span class="badge bg-secondary">Stimulus</span>
-                                <span class="badge bg-secondary">Bootstrap</span>
+                    <div class="col-lg-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fa-solid fa-users me-2 text-warning"></i>Geobasierte Benutzerverwaltung
+                                </h5>
+                                <p class="card-text text-muted small">
+                                    Geobasierte Benutzerverwaltung mit MongoDB und Live-Ortsuche.
+                                    Gesichtsbilder werden als scrollbarer Thumbnail-Slider dargestellt.
+                                    Ein Klick auf ein Portrait zeigt das Bild und eine interaktive
+                                    Leaflet-Karte mit dem Wohnort des Benutzers.
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge bg-secondary">MongoDB</span>
+                                    <span class="badge bg-secondary">Leaflet</span>
+                                    <span class="badge bg-secondary">Stimulus</span>
+                                    <span class="badge bg-secondary">Bootstrap</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="http://127.0.0.1:18432/html/usermgmt.html" class="btn btn-success btn-sm w-100">
+                                    <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
+                                </a>
                             </div>
                         </div>
-                        <div class="card-footer bg-transparent">
-                            <a href="http://127.0.0.1:18432/html/usermgmt.html" class="btn btn-success btn-sm w-100">
-                                <i class="fa-solid fa-arrow-right me-1"></i> Öffnen
-                            </a>
-                        </div>
                     </div>
-                </div>
 
+                </div>
+            </div><!-- /module-row -->
+
+            <!-- Tech-Info Panel -->
+            <div id="tech-info" class="card mt-4 shadow-sm border-primary">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h5 id="tech-info-title" class="card-title mb-3"></h5>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="closeTechInfo()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div id="tech-info-body" class="text-muted"></div>
+                </div>
             </div>
 
-            <div class="card mt-4 shadow-sm">
+            <div id="techstack-card" class="card mt-4 shadow-sm">
                 <div class="card-body">
-                    <h6 class="card-title text-muted mb-3">
-                        <i class="fa-solid fa-server me-2"></i>Tech-Stack
+                    <h6 class="card-title text-muted mb-3 d-flex align-items-center justify-content-between">
+                        <span><i class="fa-solid fa-server me-2"></i>Tech-Stack</span>
+                        <span id="toggle-btn" class="badge bg-secondary" onclick="toggleModules()">
+                            <i id="toggle-icon" class="fa-solid fa-chevron-up me-1"></i>Module ausblenden
+                        </span>
                     </h6>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="badge bg-primary">Symfony 7 / PHP</span>
+                        <span class="badge bg-primary badge-clickable" onclick="showTechInfo('symfony')">Symfony 7 / PHP</span>
                         <span class="badge bg-primary">Stimulus / AssetMapper</span>
                         <span class="badge bg-primary">Bootstrap 5</span>
                         <span class="badge bg-dark">Docker</span>
@@ -174,5 +227,80 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const TECH_INFO = {
+            symfony: {
+                title: 'Symfony 7 / PHP',
+                body: `
+                    <p>Symfony bildet das Rückgrat von PVOC. Als Full-Stack-Framework übernimmt es Routing,
+                    Dependency Injection, ORM-Integration via Doctrine und die gesamte Controller-Schicht –
+                    von der Vocabulary-API bis zum Job-Queue-System für die ML-Pipelines.</p>
+                    <p>Die Entscheidung für Symfony 7 fiel aus mehreren Gründen: Das Komponentensystem erlaubt
+                    es, nur das einzubinden, was wirklich gebraucht wird. Der <strong>AssetMapper</strong>
+                    ersetzt einen kompletten Node.js-Build-Stack – JavaScript und CSS werden ohne Webpack
+                    oder Vite direkt ausgeliefert, was den Docker-Build erheblich schlanker hält.</p>
+                    <p>Besonders im Zusammenspiel mit <strong>Stimulus</strong> zeigt Symfony seine Stärke:
+                    Server-side Rendering mit gezielten JS-Controllern dort, wo Interaktivität gebraucht wird –
+                    kein unnötiges SPA-Overhead. Das <strong>Mercure-Protokoll</strong> für Server-Sent Events
+                    ist ebenfalls nahtlos in das Symfony-Ökosystem integriert und ermöglicht Echtzeit-Updates
+                    in der Gallery-Pipeline.</p>
+                `
+            }
+        };
+
+        let activeKey = null;
+        let modulesVisible = true;
+
+        function showTechInfo(key) {
+            const info = TECH_INFO[key];
+            if (!info) return;
+
+            // Toggle: nochmal klicken schließt
+            if (activeKey === key) {
+                closeTechInfo();
+                return;
+            }
+
+            activeKey = key;
+
+            // Module einklappen
+            document.getElementById('module-row').classList.add('collapsed');
+            modulesVisible = false;
+            document.getElementById('toggle-icon').className = 'fa-solid fa-chevron-down me-1';
+            document.getElementById('toggle-btn').innerHTML =
+                '<i class="fa-solid fa-chevron-down me-1"></i>Module einblenden';
+
+            // Active-Styling auf Badge
+            document.querySelectorAll('.badge-clickable').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Info befüllen & einblenden
+            document.getElementById('tech-info-title').textContent = info.title;
+            document.getElementById('tech-info-body').innerHTML = info.body;
+            document.getElementById('tech-info').classList.add('visible');
+        }
+
+        function closeTechInfo() {
+            activeKey = null;
+            document.getElementById('tech-info').classList.remove('visible');
+            document.querySelectorAll('.badge-clickable').forEach(b => b.classList.remove('active'));
+
+            // Module wieder ausklappen
+            document.getElementById('module-row').classList.remove('collapsed');
+            modulesVisible = true;
+            document.getElementById('toggle-icon').className = 'fa-solid fa-chevron-up me-1';
+            document.getElementById('toggle-btn').innerHTML =
+                '<i class="fa-solid fa-chevron-up me-1"></i>Module ausblenden';
+        }
+
+        function toggleModules() {
+            const row = document.getElementById('module-row');
+            const collapsed = row.classList.toggle('collapsed');
+            modulesVisible = !collapsed;
+            document.getElementById('toggle-btn').innerHTML = collapsed
+                ? '<i class="fa-solid fa-chevron-down me-1"></i>Module einblenden'
+                : '<i class="fa-solid fa-chevron-up me-1"></i>Module ausblenden';
+        }
+    </script>
 </body>
 </html>
