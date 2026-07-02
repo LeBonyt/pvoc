@@ -264,8 +264,20 @@ def start_server():
 thread = threading.Thread(target=start_server, daemon=True)
 thread.start()
 
+SYMFONY_BASE = ''
+
 class Api:
-    def open_image(self, path):
+    def open_image(self, img_path):
+        # img_path kommt z.B. als /img/pvoc/nsfw_1.png oder ../img/pvoc/pvoc_1.png
+        # Immer als vollständige http-URL aufbauen, damit pywebview das Bild laden kann
+        if img_path.startswith('http://') or img_path.startswith('https://'):
+            url = img_path
+        elif img_path.startswith('/'):
+            url = f'http://127.0.0.1:{PORT}{img_path}'
+        else:
+            # relative Pfade wie ../img/... normalisieren
+            import urllib.parse
+            url = f'http://127.0.0.1:{PORT}/' + img_path.lstrip('./')
         webview.create_window(
             'Bild',
             html=f'''<!DOCTYPE html>
@@ -279,7 +291,7 @@ class Api:
 </style>
 </head>
 <body>
-  <img src="{path}">
+  <img src="{url}">
 </body>
 </html>''',
             width=1400,
@@ -287,11 +299,32 @@ class Api:
             resizable=True
         )
 
+    def navigate_home(self):
+        """Navigiert das Hauptfenster zurück zur Projektübersicht."""
+        def _do_navigate():
+            import time
+            time.sleep(0.1)  # kurz warten bis pywebview den Callback abgeschlossen hat
+            windows = webview.windows
+            if windows:
+                windows[0].load_url(f'http://127.0.0.1:{PORT}/projekte.html')
+        threading.Thread(target=_do_navigate, daemon=True).start()
+        return True
+
+    def open_info(self, module):
+        # module = 'nsfw' | 'gfscraping' | 'pvoc' | 'usermgmt'
+        webview.create_window(
+            'Präsentation',
+            f'/html/{module}.html',
+            width=1200,
+            height=850,
+            resizable=True
+        )
+
 api = Api()
 
 webview.create_window(
     'PVOC – Projektübersicht',
-    f'http://127.0.0.1:{PORT}/projekte.html',
+    f'projekte.html',
     width=1200,
     height=800,
     resizable=True,
