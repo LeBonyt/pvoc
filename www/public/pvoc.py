@@ -256,6 +256,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().__init__(*args, directory=BASE_DIR, **kwargs)
     def log_message(self, format, *args):
         pass  # kein Output im Terminal
+    def handle_error(self, request, client_address):
+        pass  # ConnectionAbortedError & Co. stillschweigend ignorieren
 
 def start_server():
     with socketserver.TCPServer(('127.0.0.1', PORT), Handler) as httpd:
