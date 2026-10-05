@@ -14,7 +14,39 @@ if missing:
     print("Fehlende Module:", ", ".join(missing.keys()))
     print("Installation mit:")
     print(f"    pip install {' '.join(missing.values())}")
+    if sys.platform.startswith("linux"):
+        print("Hinweis (Debian/Ubuntu/WSL): pip ist systemweit gesperrt (PEP 668). Stattdessen:")
+        print("    python3 -m venv --system-site-packages ~/venvs/pvoc")
+        print("    ~/venvs/pvoc/bin/pip install pywebview")
     sys.exit(1)
+
+# --- GUI-Backend-Check (pywebview braucht auf Linux GTK/WebKit oder Qt) ---
+if sys.platform.startswith("linux"):
+    def _backend_ok():
+        # GTK + WebKit2 (4.1 oder 4.0)
+        try:
+            import gi
+            gi.require_version("Gtk", "3.0")
+            for ver in ("4.1", "4.0"):
+                try:
+                    gi.require_version("WebKit2", ver)
+                    return True
+                except ValueError:
+                    continue
+        except (ImportError, ValueError):
+            pass
+        # Qt als Alternative
+        return (importlib.util.find_spec("qtpy") is not None
+                and (importlib.util.find_spec("PyQt6") is not None
+                     or importlib.util.find_spec("PySide6") is not None))
+
+    if not _backend_ok():
+        print("Fehlendes GUI-Backend: pywebview findet weder GTK/WebKit2 noch Qt.")
+        print("Installation (Debian/Ubuntu/WSL):")
+        print("    sudo apt install python3-gi gir1.2-gtk-3.0 gir1.2-webkit2-4.1")
+        print("Das venv muss mit --system-site-packages angelegt sein, sonst sieht es 'gi' nicht:")
+        print("    python3 -m venv --system-site-packages ~/venvs/pvoc")
+        sys.exit(1)
 
 # --- Imports ---
 import webview
@@ -333,4 +365,8 @@ webview.create_window(
     js_api=api
 )
 
-webview.start()
+try:
+    webview.start()
+except webview.errors.WebViewException as e:
+    print("pywebview konnte kein GUI-Backend starten:", e)
+    sys.exit(1)
