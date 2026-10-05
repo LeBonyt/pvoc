@@ -41,7 +41,7 @@ KI-gestütztes Vokabellernen mit Bildgenerierung und Mehrsprachigkeit.
 ---
 
 ### 👥 Geo-based User Management
-Benutzerprofile mit Gesichtserkennung, Portrait-Slider und interaktiven Standortkarten.
+Benutzerprofile mit Gesichtserkennung, Portrait-Slider, interaktiven Standortkarten und Haltestellenanzeige
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-green?style=flat-square)
 ![Leaflet](https://img.shields.io/badge/Leaflet-green?style=flat-square)
